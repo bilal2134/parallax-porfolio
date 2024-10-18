@@ -1,0 +1,549 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+*{
+    margin : 0;
+    padding : 0;
+    box-sizing : border-box;
+    list-style: none;
+    scroll-behavior: smooth;
+}
+
+::-webkit-scrollbar {
+    width: .5rem; 
+    height: .1rem;
+}
+
+::-webkit-scrollbar-track {
+    background: #67ccff;   
+}
+
+::-webkit-scrollbar-thumb {
+    background: #194eb9;  
+    border-radius: 5rem;  
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: #1d002c;
+    color: #fff;
+    overflow-x: hidden;
+   
+
+}
+
+header{
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 25px 10%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    z-index: 1001;
+    /*background: #1d002c;*/
+}
+
+.logo {
+    font-size: 1rem;
+    color: #12f7ff;
+    text-decoration: none;
+    font-weight: 600;
+    background-image: url('logo.png'); 
+    background-repeat: no-repeat;
+    background-size: 40px 40px; 
+    padding-left: 45px; 
+    line-height: 40px;  
+    display: inline-block;
+    border-radius: 25px; 
+}
+
+ul.navlist {
+    display: flex;
+    align-items: center;
+}
+
+.navlist li{
+    margin: 1rem;
+}  
+
+.navlist li a{
+    text-decoration: none;
+    color: #fff;
+    font-size: 1rem;
+    font-weight: 500;
+    padding: 5px 12px;
+    border: 2px solid #12f7ff;
+    transition: all 1s ease;
+    border-radius: 25px;
+}
+
+.navlist li a:hover,
+.navlist li a.active{
+    background: #12f7ff;
+    color: #1d002c;
+    box-shadow: 0 0 1rem #12f7ff;
+}
+
+section{
+    min-height: 100vh;
+}
+
+.parallax-home{
+    position: relative; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000 ;
+}
+
+.parallax-home img{
+    position: absolute;
+    object-fit: cover;
+    pointer-events: none;
+} 
+/* to move the text that goes up to down from the start           will adjust it accordingly after completion*/
+.parallax-home #text{
+    position: absolute;
+    color: #ffffff;
+    text-shadow: 0 10px 4px rgba(0, 0, 0, 0.85);
+    font-size: 3rem;
+    top: 100%;
+    left:5%;
+}
+
+.parallax-home img#moon, .about img#desert-moon{
+    mix-blend-mode: screen;
+}
+.parallax-home img#train{
+    left:5%;
+}
+
+
+#readMoreBtn{
+    background: #12f7ff;
+    color: #1d002c;
+    text-decoration: none;
+    border-radius: 25px;
+    padding: .5rem 1rem;
+    transition: all 0.3s ease;
+    border: 2px solid #12f7ff;
+    font-weight: 500;
+}
+
+#readMoreBtn:hover{
+    background: #1d002c;
+    color: #12f7ff;
+    box-shadow: 0 0 1rem #12f7ff;
+}
+
+.about{
+    position: relative;
+}
+
+.about img{
+   pointer-events: none;
+    object-fit: cover;
+    position: absolute;
+    z-index: 1000 ;
+}
+
+.about img.about-waterfall{
+    position: absolute;
+top: -95px;
+}
+
+.about .info-box{
+    position: absolute;
+    top: 0%;
+    left: 10%;
+    width: 50%;
+    z-index: 1003;
+    background: #1d002c;
+}
+
+.about .info-box h2{
+    font-size: 2.5rem;
+}
+
+.about .info-box p{
+    margin-top: 1rem  ;
+    font-size: 1rem;
+    margin-bottom: 1rem;
+}   
+
+.btn{
+    background: #12f7ff;
+    color: #1d002c;
+    text-decoration: none;
+    border-radius: 25px;
+    padding: .5rem 1rem;
+    transition: all 0.3s ease;
+    border: 2px solid #12f7ff;
+    font-weight: 500;
+}
+
+.btn:hover{
+    background: #1d002c;
+    color: #12f7ff;
+    box-shadow: 0 0 1rem #12f7ff;
+}
+
+.products{
+background: #121137;
+padding: 3rem 10%;
+
+ }
+
+.products h2{
+    margin-top: 2rem;
+    font-size: 2rem;
+    padding: 2rem 0 1rem 0;
+    text-align: center;
+    margin-bottom: 5rem;
+}
+
+.product-card{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem  ;
+
+
+ 
+}
+
+.card{
+    padding: 1rem;
+    border: 3px solid #12f7ff;
+    text-align: center;
+    border-radius: 25px;
+    display: block;
+    transition: all 0.3s ease;
+    z-index: 999 ;
+
+}
+
+/* this is a section used CHATGPT to generate overlay */
+.overlay {
+    display: none;
+    position: fixed;
+    top: 0%;
+    padding: 50px;
+    width: 50%;
+    height: 50%;
+    background-color: rgba(0, 0, 0, 0.3); /* Semi-transparent black background */
+    backdrop-filter: blur(5px); /* Apply blur effect to the background */
+    z-index: 9999;
+   
+    justify-content: center;
+    align-items: center;
+}
+
+.blur {
+    filter: blur(5px);
+}
+.overlay-content {
+    background-color: #1d002c;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.btn-close {
+    display: block;
+    text-align: center;
+    margin-top: 20px;
+
+    background: #12f7ff;
+    color: #1d002c;
+    text-decoration: none;
+    border-radius: 25px;
+    padding: .5rem 1rem;
+    border: 2px solid #12f7ff;
+    font-weight: 500;
+}
+
+.btn-close:hover{
+    background: #1d002c;
+    color: #12f7ff;
+    box-shadow: 0 0 1rem #12f7ff;
+}
+
+
+ /* this section ends here   */
+
+.card:hover{
+    transform: scale(1.1);
+    box-shadow: 0 0 1rem #12f7ff;
+}
+
+
+
+.card img{
+    width: 150px;
+    height: 150px;
+    margin-top: -4rem;
+    filter:drop-shadow(0 0 0.5rem #12f7ff);
+}
+
+.price-name span {
+    border: 1px solid #fff; /* 1px white border */
+     border-radius: 25px;
+    display: block;
+    transition: all 0.3s ease;
+    filter:drop-shadow(0 0 0.5rem #12f7ff);
+    padding-bottom: .5rem;
+    padding: 1px 2px; /* Add some padding inside the border */
+    font-weight: 500;
+  }
+
+.info{
+    padding-bottom: .5rem;
+}
+
+.info p{
+    margin-top: 1rem;
+    font-size: 1rem;
+    margin-bottom: 1rem;
+}
+
+
+#progress{
+    position: fixed;
+    /*background-color: #194eb9;*/
+    z-index: 1000;
+    bottom: 60px;
+    right: 10px;
+    width: 50px;
+    height: 50px;
+    display: none;
+    place-items: center;
+    border-radius: 50%;
+    color: #1d002c;
+    cursor: pointer;
+
+}
+
+#progress-value{
+    display: block;
+    height: calc(100% - 10px);
+    width: calc(100% - 10px);
+    background: #fff;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    font-size: 30px;
+    color: #194eb9;
+}
+
+
+
+
+
+
+
+.btn1{
+    background: #12f7ff;
+    color: #1d002c;
+    text-decoration: none;
+    border-radius: 25px;
+    padding: .5rem 1rem;
+    transition: all 0.3s ease;
+    border: 2px solid #12f7ff;
+    font-weight: 500;
+}
+
+.btn1:hover{
+    background: #1d002c;
+    color: #12f7ff;
+    box-shadow: 0 0 1rem #12f7ff;
+}
+
+
+.bt2{
+    background: #12f7ff;
+    color: #1d002c;
+    text-decoration: none;
+    border-radius: 25px;
+    padding: .5rem 1rem;
+    transition: all 0.3s ease;
+    border: 2px solid #12f7ff;
+    font-weight: 500;
+}
+
+.btn2:hover{
+    background: #1d002c;
+    color: #12f7ff;
+    box-shadow: 0 0 1rem #12f7ff;
+}
+
+.bt3{
+    background: #12f7ff;
+    color: #1d002c;
+    text-decoration: none;
+    border-radius: 25px;
+    padding: .5rem 1rem;
+    transition: all 0.3s ease;
+    border: 2px solid #12f7ff;
+    font-weight: 500;
+}
+
+.btn3:hover{
+    background: #1d002c;
+    color: #12f7ff;
+    box-shadow: 0 0 1rem #12f7ff;
+}
+/* for python */
+
+.overlayP {
+    display: none;
+    position: fixed;
+    top: 0%;
+    padding: 50px;
+    width: 50%;
+    height: 50%;
+    background-color: rgba(0, 0, 0, 0.3); /* Semi-transparent black background */
+    backdrop-filter: blur(5px); /* Apply blur effect to the background */
+    z-index: 9999;
+   
+    justify-content: center;
+    align-items: center;
+}
+
+.blur {
+    filter: blur(5px);
+}
+.overlay-contentP {
+    background-color: #1d002c;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.btn-closePP {
+    display: block;
+    text-align: center;
+    margin-top: 20px;
+
+    background: #12f7ff;
+    color: #1d002c;
+    text-decoration: none;
+    border-radius: 25px;
+    padding: .5rem 1rem;
+    border: 2px solid #12f7ff;
+    font-weight: 500;
+}
+
+.btn-closePP:hover{
+    background: #1d002c;
+    color: #12f7ff;
+    box-shadow: 0 0 1rem #12f7ff;
+}
+
+
+ /* this section ends here   */
+
+
+
+
+ /* for web */
+
+.overlayW {
+    display: none;
+    position: fixed;
+    top: 0%;
+    padding: 50px;
+    width: 50%;
+    height: 50%;
+    background-color: rgba(0, 0, 0, 0.3); /* Semi-transparent black background */
+    backdrop-filter: blur(5px); /* Apply blur effect to the background */
+    z-index: 9999;
+   
+    justify-content: center;
+    align-items: center;
+}
+
+.blur {
+    filter: blur(5px);
+}
+.overlay-contentW {
+    background-color: #1d002c;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.btn-closeWW {
+    display: block;
+    text-align: center;
+    margin-top: 20px;
+
+    background: #12f7ff;
+    color: #1d002c;
+    text-decoration: none;
+    border-radius: 25px;
+    padding: .5rem 1rem;
+    border: 2px solid #12f7ff;
+    font-weight: 500;
+}
+
+.btn-closeWW:hover{
+    background: #1d002c;
+    color: #12f7ff;
+    box-shadow: 0 0 1rem #12f7ff;
+}
+
+
+ /* this section ends here   */
+
+
+
+
+
+
+ /* for python */
+
+.overlayN {
+    display: none;
+    position: fixed;
+    top: 0%;
+    padding: 50px;
+    width: 50%;
+    height: 50%;
+    background-color: rgba(0, 0, 0, 0.3); /* Semi-transparent black background */
+    backdrop-filter: blur(5px); /* Apply blur effect to the background */
+    z-index: 9999;
+   
+    justify-content: center;
+    align-items: center;
+}
+
+.blur {
+    filter: blur(5px);
+}
+.overlay-contentN {
+    background-color: #1d002c;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.btn-closeNN {
+    display: block;
+    text-align: center;
+    margin-top: 20px;
+
+    background: #12f7ff;
+    color: #1d002c;
+    text-decoration: none;
+    border-radius: 25px;
+    padding: .5rem 1rem;
+    border: 2px solid #12f7ff;
+    font-weight: 500;
+}
+
+.btn-closeNN:hover{
+    background: #1d002c;
+    color: #12f7ff;
+    box-shadow: 0 0 1rem #12f7ff;
+}
+
+
+ /* this section ends here   */
